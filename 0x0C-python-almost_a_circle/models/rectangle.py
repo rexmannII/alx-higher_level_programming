@@ -17,7 +17,7 @@ class Rectangle(Base):
     @property
     def width(self):
         '''width of this rectangle.'''
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -51,7 +51,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validate("y", value)
+        self.validate_integer("y", value)
         self.__y = value
 
     def validate_integer(self, name, value, eq=True):
@@ -61,7 +61,7 @@ class Rectangle(Base):
         if eq and value < 0:
             raise ValueError("{} must be >= 0".format(name))
         elif not eq and value <= 0:
-            raise ValueError("{} must be >= 0".format(name)i)
+            raise ValueError("{} must be >= 0".format(name))
 
     def area(self):
         '''Computers area of the rectangle.'''
