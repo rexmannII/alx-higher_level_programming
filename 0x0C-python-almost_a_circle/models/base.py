@@ -76,7 +76,7 @@ class Base:
             else:
                 list_objs = [[o.id, o.size, o.x, o.y]
                             for o in list_objs]
-        with open('(),csv'.format(cls.__name__), 'w', newline='', encoding='utf-8') as f:
+        with open('{},csv'.format(cls.__name__), 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerows(list_objs)
 
@@ -86,7 +86,7 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         rext = []
-        with open('().csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
+        with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
             for row in reader:
                 row = [int(r) for r in row]
