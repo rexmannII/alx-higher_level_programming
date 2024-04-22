@@ -82,7 +82,7 @@ class Base:
 
     class Rectangle:
         @classmethod
-         def load_from_file_csv(cls):
+        def load_from_file_csv(cls):
             try:
                 with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
                     # Code to read data from the file
