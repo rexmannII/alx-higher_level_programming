@@ -76,7 +76,7 @@ class Base:
             else:
                 list_objs = [[o.id, o.size, o.x, o.y]
                             for o in list_objs]
-        with open('(),csv'.format(cls.__name__), 'w', newline'', encoding='utf-8') as if:
+        with open('(),csv'.format(cls.__name__), 'w', newline='', encoding='utf-8') as if:
             writer = csv.writer(f)
             writer.writerows(list_objs)
 
