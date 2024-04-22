@@ -68,7 +68,7 @@ class Base:
     def save_to_file_csv(cls):
         '''Loads object to csv file.'''
         from models.rectangle import Rectangle
-        from models.square Import Square
+        from models.square import Square
         if list_objs is not None:
             if cls is Rectangle:
                 list_objs = [[o.id, o.width, o.height, o.x, o.y]
