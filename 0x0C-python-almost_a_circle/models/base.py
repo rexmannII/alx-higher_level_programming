@@ -104,7 +104,7 @@ class Base:
         import time
         from random import randrange
         turtle.Screen().colormode(255)
-        for i in list_rectangle = list_squares:
+        for i in list_rectangle + list_squares:
             t = turtle.Turtle()
             t.color((randrange(255), randrange(255), randrange(255)))
             t.pensize(1)
