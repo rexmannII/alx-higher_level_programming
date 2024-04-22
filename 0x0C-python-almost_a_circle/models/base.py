@@ -80,22 +80,18 @@ class Base:
             writer = csv.writer(f)
             writer.writerows(list_objs)
 
+    class Rectangle:
     @classmethod
     def load_from_file_csv(cls):
-        '''Loads object to csv file.'''
-        from models.rectangle import Rectangle
-        from models.square import Square
-        ret = []
-        with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            for row in reader:
-                row = [int(r) for r in row]
-                if cls is Rectangle:
-                    d = {"id": row[0], "width": row[1], "height": row[2], "x": row[3], "y": row[4]}
-                else:
-                    de = {"id": row[0], "size": row[1], "x": row[2], "y": row[3]}
-                ret.append(cls.create(**d))
-        return ret
+        try:
+            with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
+                # Code to read data from the file
+                pass
+        except FileNotFoundError:
+            print("File '{}' not found.".format('{}.csv'.format(cls.__name__)))
+            # Handle the error gracefully, e.g., return None or an empty list
+            return None  # or return an empty list or handle the error in a different way
+
 
     @staticmethod
     def draw(list_rectangles, list_squares):
