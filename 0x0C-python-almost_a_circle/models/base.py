@@ -81,16 +81,16 @@ class Base:
             writer.writerows(list_objs)
 
     class Rectangle:
-    @classmethod
-    def load_from_file_csv(cls):
-        try:
-            with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
-                # Code to read data from the file
-                pass
-        except FileNotFoundError:
-            print("File '{}' not found.".format('{}.csv'.format(cls.__name__)))
-            # Handle the error gracefully, e.g., return None or an empty list
-            return None  # or return an empty list or handle the error in a different way
+        @classmethod
+         def load_from_file_csv(cls):
+            try:
+                with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as f:
+                    # Code to read data from the file
+                    pass
+            except FileNotFoundError:
+                print("File '{}' not found.".format('{}.csv'.format(cls.__name__)))
+                # Handle the error gracefully, e.g., return None or an empty list
+                return None  # or return an empty list or handle the error in a different way
 
 
     @staticmethod
