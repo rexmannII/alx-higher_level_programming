@@ -65,7 +65,7 @@ class Base:
             return [cls.create(**d) for d in cls.from_json_string(f.read())]
 
     @classmethod
-    def save_to_file_csv(cls):
+    def save_to_file_csv(cls, list_objs):
         '''Loads object to csv file.'''
         from models.rectangle import Rectangle
         from models.square import Square
@@ -123,31 +123,3 @@ class Base:
             t.end_fill()
 
         time.sleep(5)
-
-
-    import tkinter as tk
-
-    def greet():
-        label.config(text="Hello, " + name.get())
-
-    root = tk.Tk()
-    name = tk.StringVar()
-    name_entry = tk.Entry(root, textvariable=name)
-    name_entry.pack()
-    button = tk.Button(root, text="Greet", command=greet)
-    button.pack()
-    label = tk.Label(root)
-    label.pack()
-    root.mainloop()
-
-
-    def greet(name):
-        return "Hello, " + name
-
-    def main():
-        name = input("Enter your name: ")
-        print(greet(name))
-
-    if __name__ == "__main__":
-        main()
-
